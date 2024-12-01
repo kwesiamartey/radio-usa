@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Online Radio Stations Worldwide | Listen Live | RadiosDelight.com</title>
+    <meta name="description" content="Discover a world of music, news, and entertainment with our online radio platform! Access a global list of radio stations from every corner of the world, all in one place. Enjoy free streaming of your favorite stations, explore new genres, and stay connected to cultures worldwide. Whether you're looking for local broadcasts or international hits, our platform brings radio closer to you, anytime, anywhere!">
+    <meta name="keywords" content="radio, online radio stations, worldwide radio, live radio, music stations, Radios Delight, London, soul music, digital radio">
+    <meta name="author" content="Radios Delight">
+    <link rel="canonical" href="https://radiosdelight.com/">
+
+    <!-- Icons -->
+    <link rel="icon" href="/img/fav_icon.png" sizes="any">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/fav_icon.png">
+    <link rel="icon" href="/img/fav_icon.png" sizes="32x32">
+    <link rel="icon" href="/img/fav_icon.png" sizes="16x16">
+
+    <!-- Alternate Languages -->
+    <link rel="alternate" hreflang="en" href="https://radiosdelight.com/">
+    <link rel="alternate" hreflang="es" href="https://radiosdelight.com/">
+    <link rel="alternate" hreflang="fr" href="https://radiosdelight.com/">
+    <link rel="alternate" hreflang="x-default" href="https://radiosdelight.com/">
+
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:title" content="Radios Delight - Online Radio Stations Worldwide">
+    <meta property="og:description" content="Discover and listen to worldwide radio stations online at RadiosDelight.com. Enjoy your favorite radio shows anytime, anywhere!">
+    <meta property="og:image" content="https://radiosdelight.com/img/og_image.png">
+    <meta property="og:url" content="https://radiosdelight.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@700&display=swap" as="style" onload="this.rel='stylesheet'">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons/css/boxicons.min.css">
+
+    <!-- Internal CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Structured Data -->
+    <noscript>
+        <!-- Placeholder for JSON-LD structured data -->
+        <script id="structured-data" type="application/ld+json"></script>
+    </noscript>
+    <script type="application/ld+json" id="search-action">
+        {
+            "@context": "https://schema.org",
+            "@type": "SearchAction",
+            "target": "https://radio.com.gh/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    </script>
+
+    <!-- Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3366131354604966" crossorigin="anonymous"></script>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/howler" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest" defer></script>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" defer></script>
+    <script src="https://lornamobileappsdev.uk/mobileAppsWebsite/soundmanager2/script/soundmanager2.js" defer></script>
+
+    <!-- Meta for API Base URL -->
+    <meta name="api-base-url" content="https://lornamobileappsdev.uk/mobileAppsWebsite">
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <style>
+            a {
+  text-decoration: none;
+  color: white; /* Default link color */
+}
+
+a:hover {
+  text-decoration: none; /* Add underline on hover */
+  color: white; /* Change color on hover */
+}
+
+a:visited {
+ text-decoration: none;
+  color: white; /* Change color for visited links */ßß
+}
+            #top-header{
+                    position:fixed;
+                    background-color: #142229; /* Green */
+                    color: white;
+                    position: fixed; /* Fixed at the top */
+                    top: 0;
+                    left: 0;
+                    height:60px;
+                    right: 0;
+                    z-index: 1000; /* Ensures header stays above other content */
+                    display: flex;
+                    align-items: center;
+                }
+                       /* header row: Player */
+                  .player-header{
+                         background-color: #142229; /* Green */
+                         color: white;
+                         width:100%;
+                         height:60px;
+                         left: 0;
+                         right: 0;
+                         z-index: 1000; /* Ensures header stays above other content */
+                         display: flex;
+                         align-items: center;
+                     }
+                  #searchInput{
+                        background-color: #c4c4c4;
+                        border-color: #c4c4c4;
+                        border-radius: 50px;
+                        color: #333;
+                        margin-left: 40px;
+                        margin-right: 12px;
+                        padding-left: 12px;
+                        align-items: center;
+                        width: 50%;
+                        height: 35px;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="top-header" style="display: flex; flex-direction: column; background-color: #142229;">
+        <div class="container">
+            <div class="player-header">
+                <!-- Menu icon (if needed) -->
+                <!-- <span class="menu-icon" onclick="toggleMenu()">☰</span> -->
+
+                <!-- Logo and Title -->
+                <a href="index.html">
+                    <img id="Logo" src="/img/fav_icon.png" alt="Station Logo">
+                </a>
+                <a href="index.html" style="text-decoration: none;">
+                    <h3 class="mt-1 mb-2 text-white" >Radios</h3>
+                </a>
+
+                <!-- Search bar -->
+                <input type="text" id="searchInput" placeholder="Search stations" oninput="filterStations()">
+            </div>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3366131354604966"
+                    crossorigin="anonymous"></script>
+            <!-- full_width_banner -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:1200px;height:90px;"
+                 data-ad-client="ca-pub-3366131354604966"
+                 data-ad-slot="7551635696"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    </body>
+    <script src="/script/s_fetch.js"></script>
+</html>
