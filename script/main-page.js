@@ -1,5 +1,5 @@
  let stationData = []; // Store stations here to avoid multiple fetches
-    let selectedCountryPath = localStorage.getItem('selectedCountryPath') || "italyRadioList.json";
+    let selectedCountryPath = localStorage.getItem('selectedCountryPath') || "canadaRadioList.json";
 
     //let selectedCountryPath = '';
    const audio = new Audio();
@@ -14,7 +14,7 @@
     const stationListContent = document.getElementById('stationListContent');
     const countryList = document.getElementById('countryList');
 
-    const selectedCountryPathName = localStorage.getItem('selectedCountryPathName') || "Italy";
+    const selectedCountryPathName = localStorage.getItem('selectedCountryPathName') || "Canada";
 
 
     async function loadStationPlaceholders() {
@@ -44,7 +44,7 @@
              </div>
          `)
          .join('');
- }
+   }
 
         /**
      * Function to fetch and insert HTML content into a target element
