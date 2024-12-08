@@ -604,44 +604,96 @@ function initAudioPlayer(url, image, stationName, bit, country) {
                     return;
                 }
             } else {
-                // Use native HTML5 audio for other formats
-                audio.addEventListener('canplay', () => {
-                    showSpinner(false); // Hide the spinner when audio is ready
-                });
-                const stationDetails = `${stationName} (${country}) (Web)`;
-                     sendEmailNotification(stationDetails, url, 'success')
+               createAudioPlayer(url, country)
             }
 
-            // Handle error events for unsupported formats
-            audio.addEventListener('error', function() {
-                showSpinner(false); // Hide the spinner on error
-                //showCustomError('Error, Try again later.');
-                const stationDetails = `${stationName} (${country}) (Web)`;
-                handlePlaybackError(stationDetails, url, 'error')
-            });
+           
 
 }
 
-   // Show or hide the spinner
+
+
+//*************************************************************************
+
+
+/**
+ * Creates an audio player with specified audio sources.
+ * @param {Array} audioUrls - An array of objects containing audio URL and type.
+ */
+function createAudioPlayer(audioUrls, country) {
+        configureAudioPlayer();
+        attachAudioSources(audio, audioUrls);
+        handleAudioEvents(country);
+        appendAudioToDocument(audio);
+        return audio;
+}
+
+/**
+ * Configures the audio player with default settings.
+ */
+function configureAudioPlayer() {
+    audio.controls = false; // Hide playback controls
+    audio.autoplay = false; // Automatically play audio
+}
+
+/**
+ * Attaches audio sources to the audio player.
+ * @param {HTMLAudioElement} audio - The audio element.
+ * @param {Array} audioUrls - An array of objects containing audio URL and type.
+ */
+function attachAudioSources(audio, audioUrls) {
+    const source = document.createElement("source");
+    source.src = url;
+    audio.appendChild(source);
+
+}
+
+/**
+ * Attaches event listeners to the audio player.
+ */
+function handleAudioEvents(country) {
+    audio.addEventListener("canplay", () => {
+        showSpinner(false); // Hide the spinner when the audio is ready
+    });
+      // Handle error events for unsupported formats
+    audio.addEventListener('error', function() {
+          showSpinner(false); // Hide the spinner on error
+          //showCustomError('Error, Try again later.');
+          const stationDetails = `${stationName} (${country}) (Web)`;
+          handlePlaybackError(stationDetails, url, 'error')
+    });
+}
+
+/**
+ * Appends the audio player to the document body.
+ * @param {HTMLAudioElement} audio - The audio element.
+ */
+function appendAudioToDocument(audio) {
+    document.body.appendChild(audio);
+}
+
+/**
+ * Shows or hides the spinner.
+ * @param {boolean} show - Whether to show or hide the spinner.
+ */
 function showSpinner(show) {
-            progress.style.display = show ? 'block' : 'none';
+    const progress = document.getElementById('progress');
+    if (progress) {
+        progress.style.display = show ? "block" : "none";
+    }
 }
+
+
+
+//*************************************************************************
+
+
+
 
 // Play/pause functionality with icons
 playButton.addEventListener('click', () => {
 
-             /* if (bit === '00') {
-                    audio.pause();
-                    playButton.innerHTML = '▶';  // Play icon
-                    openPopupWithData(name, img, url);
-                    return;
-              }
-              else if (bit === '001') {
-                    audio.pause();
-                    playButton.innerHTML = '▶';  // Play icon
-                    openPeacefmPopupWithData(name, img, url);
-                    return;
-              }*/
+    
 
 
 
